@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Photography Session - Harrisburg Photo and PC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>Harrisburg Photo and PC</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#builds" class="nav-link">PC Builds</a></li>
+                <li><a href="request-build.html" class="nav-link">Request Build</a></li>
+                <li><a href="book-photo.html" class="nav-link">Photography</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Book Photography Session -->
+    <section id="book-photo" class="booking-section">
+        <div class="container">
+            <h2>Book a Photography Session</h2>
+            <div class="form-wrapper">
+                <form id="photoForm" class="request-form">
+                    <div class="form-group">
+                        <label for="photo-name">Full Name *</label>
+                        <input type="text" id="photo-name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo-email">Email Address *</label>
+                        <input type="email" id="photo-email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo-phone">Phone Number *</label>
+                        <input type="tel" id="photo-phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo-type">Type of Photos *</label>
+                        <input type="text" id="photo-type" name="photo-type" placeholder="e.g., Portraits, Events, Products" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo-date">Preferred Date *</label>
+                        <input type="date" id="photo-date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo-time">Preferred Time *</label>
+                        <select id="photo-time" name="time" required>
+                            <option value="">Select a time</option>
+                            <option value="3:30 PM">3:30 PM (Weekday)</option>
+                            <option value="4:00 PM">4:00 PM (Weekday)</option>
+                            <option value="4:30 PM">4:30 PM (Weekday)</option>
+                            <option value="5:00 PM">5:00 PM (Weekday)</option>
+                            <option value="5:30 PM">5:30 PM (Weekday)</option>
+                            <option value="6:00 PM">6:00 PM (Weekday)</option>
+                            <option value="6:30 PM">6:30 PM (Weekday)</option>
+                            <option value="7:00 PM">7:00 PM (Weekday)</option>
+                            <option value="Weekend">Weekend (Specify details below)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo-location-map">Select Session Location *</label>
+                        <div id="photo-location-map" class="map" style="height: 300px; width: 100%;"></div>
+                        <input type="hidden" id="photo-lat" name="photo-lat" required>
+                        <input type="hidden" id="photo-lng" name="photo-lng" required>
+                        <p class="form-note">Click on the map to select your desired session location.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo-details">Session Details</label>
+                        <textarea id="photo-details" name="details" rows="4" placeholder="Tell me more about what you're looking for..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Request Booking</button>
+                    <p class="form-note">I'll confirm your booking and discuss any special requirements within 24 hours</p>
+                </form>
+
+                <div id="photoMessage" class="form-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Harrisburg Photo and PC</h4>
+                    <p>Custom PC builds and professional photography services</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#builds">PC Builds</a></li>
+                        <li><a href="book-photo.html">Photography</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: harrisburgbuilds@outlook.com</p>
+                    <p>Phone: 717 773 6489</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Harrisburg Photo and PC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

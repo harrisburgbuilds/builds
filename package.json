@@ -1,0 +1,22 @@
+{
+  "name": "buildcraft-studios",
+  "version": "1.0.0",
+  "description": "Custom PC Builds & Photography Services Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "open index.html",
+    "build": "echo 'No build step needed - this is a static site'"
+  },
+  "keywords": [
+    "pc-builds",
+    "gaming",
+    "photography",
+    "custom-builds"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/buildcraft-website"
+  }
+}

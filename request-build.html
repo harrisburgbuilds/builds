@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Custom PC Build - Harrisburg Photo and PC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>Harrisburg Photo and PC</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#builds" class="nav-link">PC Builds</a></li>
+                <li><a href="request-build.html" class="nav-link">Request Build</a></li>
+                <li><a href="book-photo.html" class="nav-link">Photography</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Computer Request Form -->
+    <section id="computer-request" class="request-section">
+        <div class="container">
+            <h2>Request Your Custom Build</h2>
+            <div class="form-wrapper">
+                <form id="computerForm" class="request-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="budget">Budget ($) *</label>
+                            <input type="number" id="budget" name="budget" min="500" max="10000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fps-target">FPS Target *</label>
+                            <select id="fps-target" name="fps-target" required>
+                                <option value="">Select FPS Target</option>
+                                <option value="60">60 FPS (Smooth)</option>
+                                <option value="120">120 FPS (High)</option>
+                                <option value="144">144 FPS (Very High)</option>
+                                <option value="240">240+ FPS (Ultra)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Games You Want to Play (select multiple) *</label>
+                        <div class="games-grid">
+                            <label class="game-checkbox">
+                                <input type="checkbox" name="games" value="Cyberpunk 2077">
+                                <span>Cyberpunk 2077</span>
+                            </label>
+                            <label class="game-checkbox">
+                                <input type="checkbox" name="games" value="Call of Duty">
+                                <span>Call of Duty</span>
+                            </label>
+                            <label class="game-checkbox">
+                                <input type="checkbox" name="games" value="CS:GO 2">
+                                <span>CS:GO 2</span>
+                            </label>
+                            <label class="game-checkbox">
+                                <input type="checkbox" name="games" value="Valorant">
+                                <span>Valorant</span>
+                            </label>
+                            <label class="game-checkbox">
+                                <input type="checkbox" name="games" value="Fortnite">
+                                <span>Fortnite</span>
+                            </label>
+                            <label class="game-checkbox">
+                                <input type="checkbox" name="games" value="Elden Ring">
+                                <span>Elden Ring</span>
+                            </label>
+                            <label class="game-checkbox">
+                                <input type="checkbox" name="games" value="Star Citizen">
+                                <span>Star Citizen</span>
+                            </label>
+                            <label class="game-checkbox">
+                                <input type="checkbox" name="games" value="Other">
+                                <span>Other (specify below)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-games">Other Games</label>
+                        <input type="text" id="additional-games" name="additional-games" placeholder="List any other games you want to play">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests/Notes</label>
+                        <textarea id="special-requests" name="special-requests" rows="4" placeholder="Any specific requirements or preferences?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Get Price Quote</button>
+                    <p class="form-note">I'll review your requirements and send you a detailed quote within 24 hours</p>
+                </form>
+
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Harrisburg Photo and PC</h4>
+                    <p>Custom PC builds and professional photography services</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#builds">PC Builds</a></li>
+                        <li><a href="book-photo.html">Photography</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: harrisburgbuilds@outlook.com</p>
+                    <p>Phone: 717 773 6489</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Harrisburg Photo and PC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
