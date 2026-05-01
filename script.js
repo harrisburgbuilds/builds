@@ -197,14 +197,14 @@ document.querySelectorAll('.nav-link').forEach(link => {
         const photoMap = new mapboxgl.Map({
             container: 'photo-location-map',
             style: 'https://api.maptiler.com/maps/basic/style.json?key=080iEI6i5hfaGaI2PiOT',
-            center: [-76.88, 40.32], // Default to a general area around Harrisburg
-            zoom: 9
+            center: [-76.8847, 40.2644], // Harrisburg Capital Building coordinates
+            zoom: 12
         });
 
         let marker = new mapboxgl.Marker({
             draggable: true
         })
-        .setLngLat([-76.88, 40.32]) // Initial marker position
+        .setLngLat([-76.8847, 40.2644]) // Initial marker position: Harrisburg Capital Building
         .addTo(photoMap);
 
         function onDragEnd() {
