@@ -82,7 +82,7 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2>Request <span id="selectedBuild"></span></h2>
-            <form id="quickRequestForm" name="quick_build_request" class="quick-form">
+            <form id="quickRequestForm" name="quick_build_request" class="quick-form" data-netlify="true">
                 <div class="form-group">
                     <label for="quick-name">Full Name *</label>
                     <input type="text" id="quick-name" name="name" required>
@@ -129,7 +129,7 @@
     </footer>
 
     <!-- Hidden form for Netlify Forms detection -->
-    <form name="quick_build_request" style="display: none;">
+    <form name="quick_build_request" data-netlify="true" style="display: none;">
         <input type="text" name="name">
         <input type="tel" name="phone">
         <input type="text" name="build">
