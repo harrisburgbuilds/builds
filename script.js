@@ -34,6 +34,7 @@ requestButtons.forEach(button => {
     button.addEventListener('click', () => {
         const buildName = button.getAttribute('data-build');
         selectedBuildSpan.textContent = buildName;
+        document.getElementById('quick-build').value = buildName;
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
     });
