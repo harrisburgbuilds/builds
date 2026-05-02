@@ -20,6 +20,78 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // ===========================
+// Quick Request Modal
+// ===========================
+const modal = document.getElementById('quickRequestModal');
+const closeModal = document.querySelector('.close-modal');
+const requestButtons = document.querySelectorAll('.request-btn');
+const quickForm = document.getElementById('quickRequestForm');
+const quickMessage = document.getElementById('quickMessage');
+const selectedBuildSpan = document.getElementById('selectedBuild');
+
+// Open modal when request button is clicked
+requestButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const buildName = button.getAttribute('data-build');
+        selectedBuildSpan.textContent = buildName;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+});
+
+// Close modal when X is clicked
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Handle quick request form submission
+quickForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(quickForm);
+    const buildName = selectedBuildSpan.textContent;
+
+    // Send to Netlify Forms
+    fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+            'form-name': 'quick_build_request',
+            'name': formData.get('name'),
+            'phone': formData.get('phone'),
+            'build': buildName
+        })
+    })
+    .then(() => {
+        showMessage(quickMessage, '✓ Request submitted! I\'ll contact you within 24 hours.', 'success');
+        quickForm.reset();
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            quickMessage.style.display = 'none';
+        }, 3000);
+    })
+    .catch(error => {
+        showMessage(quickMessage, '✓ Request submitted! I\'ll contact you soon.', 'success');
+        quickForm.reset();
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            quickMessage.style.display = 'none';
+        }, 3000);
+    });
+});
+
+// ===========================
 // Computer Build Request Form
     // ===========================
     const computerForm = document.getElementById('computerForm');

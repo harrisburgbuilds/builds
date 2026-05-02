@@ -46,30 +46,60 @@
         <div class="container">
             <h2>Featured PC Builds</h2>
             <div class="builds-grid">
-                <a href="team-red-beast.html" class="build-card">
+                <div class="build-card">
                     <div class="build-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
                     <h3>Team Red Beast</h3>
                     <p class="price">$2,664</p>
-                    <p>Click for more info</p>
-                </a>
+                    <ul class="specs">
+                        <li><strong>CPU:</strong> AMD Ryzen 9 9800X3D</li>
+                        <li><strong>GPU:</strong> AMD Radeon RX 9070 XT</li>
+                        <li><strong>RAM:</strong> 64GB DDR5</li>
+                        <li><strong>Storage:</strong> 2TB NVMe SSD</li>
+                        <li><strong>Performance:</strong> 200+ FPS @ 1440p</li>
+                    </ul>
+                    <button class="btn btn-primary request-btn" data-build="Team Red Beast">Request Build</button>
+                </div>
 
-                <a href="4k-gaming-machine.html" class="build-card">
+                <div class="build-card">
                     <div class="build-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
                     <h3>4K Gaming Machine</h3>
                     <p class="price">$6,088</p>
-                    <p>Click for more info</p>
-                </a>
+                    <ul class="specs">
+                        <li><strong>CPU:</strong> AMD Ryzen 9 9800X3D</li>
+                        <li><strong>GPU:</strong> RTX 5090 GV-N5090GAMING OC</li>
+                        <li><strong>RAM:</strong> 64GB DDR5 (Corsair CMH64GX5M2D5600Z40)</li>
+                        <li><strong>Storage:</strong> 4TB NVMe SSD</li>
+                        <li><strong>Performance:</strong> 100+ FPS @ 4K</li>
+                    </ul>
+                    <button class="btn btn-primary request-btn" data-build="4K Gaming Machine">Request Build</button>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Quick Request Modal -->
+    <div id="quickRequestModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Request <span id="selectedBuild"></span></h2>
+            <form id="quickRequestForm" class="quick-form">
+                <div class="form-group">
+                    <label for="quick-name">Full Name *</label>
+                    <input type="text" id="quick-name" name="name" required>
+                </div>
 
+                <div class="form-group">
+                    <label for="quick-phone">Phone Number *</label>
+                    <input type="tel" id="quick-phone" name="phone" required>
+                </div>
 
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+                <p class="form-note">I'll contact you within 24 hours to discuss details and confirm the build.</p>
+            </form>
 
-
-
-
-
+            <div id="quickMessage" class="form-message"></div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
