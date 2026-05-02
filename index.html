@@ -82,7 +82,7 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2>Request <span id="selectedBuild"></span></h2>
-            <form id="quickRequestForm" class="quick-form">
+            <form id="quickRequestForm" name="quick_build_request" class="quick-form">
                 <div class="form-group">
                     <label for="quick-name">Full Name *</label>
                     <input type="text" id="quick-name" name="name" required>
@@ -127,6 +127,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- Hidden form for Netlify Forms detection -->
+    <form name="quick_build_request" style="display: none;">
+        <input type="text" name="name">
+        <input type="tel" name="phone">
+        <input type="text" name="build">
+    </form>
 
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
     <script src="script.js"></script>
